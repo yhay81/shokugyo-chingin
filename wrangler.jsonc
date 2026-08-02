@@ -1,0 +1,20 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "shokugyo-chingin",
+  "main": "src/worker.tsx",
+  "compatibility_date": "2026-07-29",
+  "workers_dev": false,
+  "preview_urls": false,
+  "routes": [{ "pattern": "shokugyo-chingin.yhay81.com", "custom_domain": true }],
+  "triggers": { "crons": ["31 22 * * *"] },
+  "observability": { "enabled": true },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "shokugyo-chingin",
+      "database_id": "45beaeb4-ab5f-49cc-b8d0-f8792deba84e",
+      "migrations_dir": "migrations",
+    },
+  ],
+  "assets": { "directory": "./public", "binding": "ASSETS" },
+}
